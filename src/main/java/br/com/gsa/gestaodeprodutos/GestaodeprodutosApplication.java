@@ -1,4 +1,4 @@
-package br.com.gestaodeprodutos;
+package br.com.gsa.gestaodeprodutos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
