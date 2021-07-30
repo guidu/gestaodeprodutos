@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import br.com.gsa.gestaodeprodutos.model.CategoriaProduto;
+import br.com.gsa.gestaodeprodutos.model.CorProduto;
 import br.com.gsa.gestaodeprodutos.model.Produto;
 
 public class ProdutoDTO {
@@ -16,6 +17,7 @@ public class ProdutoDTO {
 	private BigDecimal precoVenda;
 	private String descricao;
 	private CategoriaProduto categoriaProduto;
+	private CorProduto corProduto;
 	
 	public ProdutoDTO() {
 	}
@@ -84,8 +86,15 @@ public class ProdutoDTO {
 		this.categoriaProduto = categoriaProduto;
 	}
 
+	public CorProduto getCorProduto() {
+		return corProduto;
+	}
+
+	public void setCorProduto(CorProduto corProduto) {
+		this.corProduto = corProduto;
+	}
+
 	public static Produto converteEmProduto(ProdutoDTO produtoDTO) {
 		return new Produto(produtoDTO);
 	}
-
 }

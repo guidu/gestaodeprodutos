@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.com.gsa.gestaodeprodutos.dto.ProdutoDTO;
@@ -23,7 +23,7 @@ public class Produto {
 	private Long idProduto;
 
 	@Column(name = "datacadastro")
-	private LocalDate dataCadastro;
+	private LocalDate dataCadastro = LocalDate.now();
 
 	@Column(name = "idusuario")
 	private Long idUsuario;
@@ -40,9 +40,11 @@ public class Produto {
 	@Column(name = "descricao")
 	private String descricao;
 
-	@Column(name = "idcategoria")
-	@OneToMany
+	@ManyToOne
 	private CategoriaProduto categoriaProduto;
+	
+	@ManyToOne
+	private CorProduto corProduto;
 
 	public Produto() {
 	}
@@ -56,6 +58,7 @@ public class Produto {
 		this.precoVenda = produtoDTO.getPrecoVenda();
 		this.descricao = produtoDTO.getDescricao();
 		this.categoriaProduto = produtoDTO.getCategoriaProduto();
+		this.corProduto = produtoDTO.getCorProduto();
 	}
 
 	public Long getIdProduto() {
@@ -120,6 +123,14 @@ public class Produto {
 
 	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
 		this.categoriaProduto = categoriaProduto;
+	}
+
+	public CorProduto getCorProduto() {
+		return corProduto;
+	}
+
+	public void setCorProduto(CorProduto corProduto) {
+		this.corProduto = corProduto;
 	}
 
 	@Override
