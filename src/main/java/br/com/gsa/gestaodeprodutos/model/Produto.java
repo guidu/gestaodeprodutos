@@ -23,7 +23,7 @@ public class Produto {
 	private Long idProduto;
 
 	@Column(name = "datacadastro")
-	private LocalDate dataCadastro = LocalDate.now();
+	private LocalDate dataCadastro;
 
 	@Column(name = "idusuario")
 	private Long idUsuario;
@@ -74,7 +74,7 @@ public class Produto {
 	}
 
 	public void setDataCadastro(LocalDate dataCadastro) {
-		this.dataCadastro = dataCadastro;
+		this.dataCadastro = LocalDate.now();
 	}
 
 	public Long getIdUsuario() {

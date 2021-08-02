@@ -12,27 +12,27 @@ import javax.persistence.Table;
 public class CategoriaProduto {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idcategoriaproduto")
-	private Long idCategoriaProduto;
+	private Long idCategoria;
 	
-	@Column(name = "nome")
-	private String nomeCategoria;
+	@Column(name = "descricao")
+	private String descricao;
 
-	public Long getIdCategoriaProduto() {
-		return idCategoriaProduto;
+	public Long getIdCategoria() {
+		return idCategoria;
 	}
 
-	public void setIdCategoriaProduto(Long idCategoriaProduto) {
-		this.idCategoriaProduto = idCategoriaProduto;
+	public void setIdCategoria(Long idCategoria) {
+		this.idCategoria = idCategoria;
 	}
 
-	public String getNomeCategoria() {
-		return nomeCategoria;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setNomeCategoria(String nomeCategoria) {
-		this.nomeCategoria = nomeCategoria;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 }
